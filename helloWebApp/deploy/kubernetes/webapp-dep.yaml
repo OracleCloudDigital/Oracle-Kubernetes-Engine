@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: demo
+  name: webapp
+  labels:
+    app: webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: webapp
+        image: phx.ocir.io/astom2018/heejong/app:0.1
+        ports:
+        - containerPort: 3000
+        imagePullPolicy: Always
+      imagePullSecrets:
+        - name: ocirsecret
