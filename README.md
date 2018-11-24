@@ -6,7 +6,7 @@
 > docker login phx.ocir.io
     - username : isheejong@gmail.com
     - password : Kubernetes1!
-    - auth token : UDlw<nrrqws9><70TRtU
+    - auth token : ****************
     - repository : heejong/app
 
  > docker images
@@ -18,7 +18,7 @@
 
 
 # setting up the secret information in kubernetes for deploying the docker image for private repository
-> kubectl create secret -n demo docker-registry ocirsecret --docker-server=phx.ocir.io --docker-username='astom2018/isheejong@gmail.com' --docker-password='UDlw<nrrqws9><70TRtU' --docker-email='isheejong@gmail.com'
+> kubectl create secret -n demo docker-registry ocirsecret --docker-server=phx.ocir.io --docker-username='astom2018/isheejong@gmail.com' --docker-password='************' --docker-email='isheejong@gmail.com'
 
 # if you want to delete ocirsecret, you do this command "kubectl delete secret ocirsecret" 
 
