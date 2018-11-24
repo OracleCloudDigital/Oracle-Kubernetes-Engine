@@ -7,9 +7,9 @@
     # - mongo
     # https://devcenter.wercker.com/administration/services/examples/mongodb/
 box:
-  id: nodejs
+  id: node:latest
   ports:
-   - $PORT
+    - "8080"
 build:
   # The steps that will be executed on build
   # Steps make up the actions in your pipeline
