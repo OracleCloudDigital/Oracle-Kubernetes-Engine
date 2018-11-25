@@ -21,7 +21,7 @@ push-release:
         working-dir: /pipeline/source
         ports: $PORT
         cmd: npm start
-        
+
 deploy-to-cluster:
     box:
         id: alpine
@@ -32,7 +32,7 @@ deploy-to-cluster:
 
     - script:
         name: "Visualise Kubernetes config"
-        code: cat ./deploy/kubernetes/*.yml
+        code: cat ./deploy/kubernetes/*.yaml
 
     - kubectl:
         name: apply new deployment
