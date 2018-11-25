@@ -21,3 +21,22 @@ push-release:
         working-dir: /pipeline/source
         ports: $PORT
         cmd: npm start
+        
+deploy-to-cluster:
+    box:
+        id: alpine
+        cmd: /bin/sh
+    steps:
+
+    - bash-template
+
+    - script:
+        name: "Visualise Kubernetes config"
+        code: cat ./deploy/kubernetes/*.yml
+
+    - kubectl:
+        name: apply new deployment
+        server: $KUBERNETES_MASTER
+        token: $KUBERNETES_TOKEN
+        insecure-skip-tls-verify: true
+        command: create -f ./deploy/kubernetes/webapp-dep.yml --namespace $NS
