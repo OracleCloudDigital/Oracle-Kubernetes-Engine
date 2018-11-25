@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: phx.ocir.io/astom2018/heejong/app:c7c6ac97b03c90ea0ef68e91ec7b7ca1bd9f9eee
+        image: phx.ocir.io/astom2018/heejong/app:${WERCKER_GIT_COMMIT}
         ports:
         - containerPort: 3000
         imagePullPolicy: Always
