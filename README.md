@@ -31,3 +31,18 @@
 
  # create service
 > kubectl create -f webapp-svc.yaml 
+
+
+
+
+
+
+
+
+# wercker
+  - DOCKER_USERNAME   astom2018/isheejong@gmail.com (e.g. gse00011111/isheejong@gmail.com)
+  - DOCKER_PASSWORD   UDlw<nrrqws9><70TRtU 
+  - DOCKER_REGISTRY   phx.ocir.io
+  - DOCKER_REPO       phx.ocir.io/astom2018/heejong/app
+  - PORT              3000
+

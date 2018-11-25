@@ -1,7 +1,7 @@
 box:
   id: node:latest
   ports:
-    - "8080"
+    - 3000
 build:
     steps:
     - npm-install
