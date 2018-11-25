@@ -5,8 +5,9 @@ metadata:
   name: webapp
   labels:
     app: webapp
+    commit: ${WERCKER_GIT_COMMIT}
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: webapp
@@ -14,10 +15,11 @@ spec:
     metadata:
       labels:
         app: webapp
+        commit: ${WERCKER_GIT_COMMIT}
     spec:
       containers:
       - name: webapp
-        image: $DOCKER_REPO:$WERCKER_GIT_COMMIT
+        image: "${DOCKER_REPO}":"${WERCKER_GIT_COMMIT}"
         ports:
         - containerPort: 3000
         imagePullPolicy: Always
