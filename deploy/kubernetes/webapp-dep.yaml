@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: $DOCKER_REPO:$WERCKER_GIT_COMMIT
+        image: ${DOCKER_REPO}:${WERCKER_GIT_COMMIT}
         ports:
         - containerPort: 3000
         imagePullPolicy: Always
