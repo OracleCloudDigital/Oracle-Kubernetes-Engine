@@ -32,7 +32,7 @@ deploy-to-cluster:
 
     - script:
         name: "Visualise Kubernetes config"
-        code: cat .*.yaml*
+        code: cat ./*.yaml
 
     - kubectl:
         name: apply new deployment
