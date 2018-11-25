@@ -32,11 +32,12 @@ deploy-to-cluster:
 
     - script:
         name: "Visualise Kubernetes config"
-        code: cat ./deploy/kubernetes/*.yaml
+        code: cat .*.yaml
+        code: cat .*.yam.template
 
     - kubectl:
         name: apply new deployment
         server: $KUBERNETES_MASTER
         token: $KUBERNETES_TOKEN
         insecure-skip-tls-verify: true
-        command: apply -f ./deploy/kubernetes/webapp-dep.yaml --namespace $NS
+        command: apply -f ./webapp-dep.yaml --namespace $NS
