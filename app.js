@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 app.get('/', function (req, res) {
-  res.send('Hello World Cloud Native Application with Heejong');
+  res.send('Hello World Oracle Cloud Native Application with Heejong');
 });
 
 app.listen(3000, function () {
