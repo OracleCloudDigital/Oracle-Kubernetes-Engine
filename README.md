@@ -1,24 +1,28 @@
-# docker image build
-> docker build --tag app:0.1 .
+본 튜토리얼은 Oracle Container Engine, Oracle Container Image Registry, Oracle Container Pipeline 을 이해하기 위한 기본 튜토리얼 입니다.
 
-# docker image push to Oracle Container Image Registry
 
-> docker login phx.ocir.io
+1. Container Image Build
+    <pre><code> > docker build --tag app:0.1 .</code></pre>
+
+2. docker image push to Oracle Container Image Registry
+    <pre><code> > docker login phx.ocir.io
     - username : isheejong@gmail.com
-    - password : Kubernetes1!
-    - auth token : UDlw<nrrqws9><70TRtU
-    - repository : heejong/app
+    - password : ********
+    - auth token : ************
+    - repository : heejong/app</code></pre>
 
- > docker images
- > docker tag 6a4420b2d5d6 phx.ocir.io/astom2018/heejong/app:0.1
- > docker push phx.ocir.io/astom2018/heejong/app:0.1
+3. docker image 확인 및 Push
+    <pre><code> > docker images
+    > docker tag 6a4420b2d5d6 phx.ocir.io/astom2018/heejong/app:0.1
+    > docker push phx.ocir.io/astom2018/heejong/app:0.1 </code></pre>
 
-# create namespace
-> kubectl create webapp-ns.yaml
+4. Kubernetes Namespace 생성
+    <pre><code> > kubectl create webapp-ns.yaml</code></pre>
 
 
 # setting up the secret information in kubernetes for deploying the docker image for private repository
-> kubectl create secret -n demo docker-registry ocirsecret --docker-server=phx.ocir.io --docker-username='astom2018/isheejong@gmail.com' --docker-password='UDlw<nrrqws9><70TRtU' --docker-email='isheejong@gmail.com'
+> kubectl create secret -n demo docker-registry ocirsecret --docker-server=phx.ocir.io --docker-username='astom2018/isheejong@gmail.com' --docker-password=****************' 
+--docker-email='isheejong@gmail.com'
 
 # if you want to delete ocirsecret, you do this command "kubectl delete secret ocirsecret" 
 
