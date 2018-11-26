@@ -19,34 +19,12 @@
 4. Kubernetes Namespace 생성
     <pre><code> > kubectl create webapp-ns.yaml</code></pre>
 
+5. Kubernetes에 배포 시 Oracle Container Image Registry에 접근 하기 위한 Secret 정보를 Kubernetes 에 등록 합니다.
+    <pre><code> > kubectl create secret -n demo docker-registry ocirsecret --docker-server=phx.ocir.io --docker-username='astom2018/isheejong@gmail.com' --docker-password=****************' 
+    --docker-email='isheejong@gmail.com'</code></pre>
 
-# setting up the secret information in kubernetes for deploying the docker image for private repository
-> kubectl create secret -n demo docker-registry ocirsecret --docker-server=phx.ocir.io --docker-username='astom2018/isheejong@gmail.com' --docker-password=****************' 
---docker-email='isheejong@gmail.com'
+6. Kubernetes 에 Deployment 를 배포 합니다.
+    <pre><code> > kubectl create -f webapp-dep.yaml</code></pre>
 
-# if you want to delete ocirsecret, you do this command "kubectl delete secret ocirsecret" 
-
- # setting git remote url for pushing a source code to repository
- git remote set-url origin "https://odpkr@github.com/odpkr/cloudnative-demo.git
-
-
- # create deployment
-> kubectl create -f webapp-dep.yaml
-
- # create service
-> kubectl create -f webapp-svc.yaml 
-
-
-
-
-
-
-
-
-# wercker
-  - DOCKER_USERNAME   astom2018/isheejong@gmail.com (e.g. gse00011111/isheejong@gmail.com)
-  - DOCKER_PASSWORD   UDlw<nrrqws9><70TRtU 
-  - DOCKER_REGISTRY   phx.ocir.io
-  - DOCKER_REPO       phx.ocir.io/astom2018/heejong/app
-  - PORT              3000
-
+7. Kubernetes 에 Service 를 배포 합니다.
+    <pre><code> > kubectl create -f webapp-svc.yaml</code></pre> 
