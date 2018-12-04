@@ -24,7 +24,7 @@ push-release:
     after-steps:
         - slack-notifier:
             url: hdacworkspace.slack.com
-            channel: notifications
+            channel: general
             username: ishejeong@gmail.com
             notify_on: "success"
 
