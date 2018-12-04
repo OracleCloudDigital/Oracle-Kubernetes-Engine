@@ -11,7 +11,7 @@ build:
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
 push-release:
-  steps:
+    steps:
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
@@ -21,6 +21,12 @@ push-release:
         working-dir: /pipeline/source
         ports: $PORT
         cmd: npm start
+    after-steps:
+        - slack-notifier:
+            url: hdacworkspace.slack.com
+            channel: notifications
+            username: ishejeong@gmail.com
+            notify_on: "success"
 
 deploy-to-cluster:
     box:
