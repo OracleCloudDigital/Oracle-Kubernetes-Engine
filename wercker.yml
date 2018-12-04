@@ -25,8 +25,8 @@ push-release:
         - slack-notifier:
             url: hdacworkspace.slack.com
             channel: general
-            username: ishejeong@gmail.com
-
+            username: Heejong
+            
 deploy-to-cluster:
     box:
         id: alpine
