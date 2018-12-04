@@ -26,7 +26,6 @@ push-release:
             url: hdacworkspace.slack.com
             channel: general
             username: ishejeong@gmail.com
-            notify_on:
 
 deploy-to-cluster:
     box:
