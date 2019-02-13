@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 app.get('/', function (req, res) {
-  res.send('Hello World Oracle Digital Prime Heejong');
+  res.send('Hello World Oracle Digital Prime ');
 });
 
 app.listen(3000, function () {
